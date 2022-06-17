@@ -30,7 +30,7 @@ function handleClick() {
 			<th>${lastName}</th>
 			<th>${idNumber}</th>
 			<th>${title}</th>
-			<th>${annualSalary}</th>
+			<th class="salary">${annualSalary}</th>
 			<th><button type="submit" class="deleteButton">Delete</button></th>
 		</tr>
 	`);
@@ -53,8 +53,14 @@ function handleDelete() {
 	//? Target parent element of the delete button?
 	//? maybe .remove maybe .clear?
 	console.log('Delete Click');
+	//? get amount of salary box
+	let amount = $(this).parent().parent().children('.salary').text();
+	console.log('This is the amount:', amount);
 	//? target the parents parent and delete it. should be tr tag
 	$(this).parent().parent().remove();
+	totalMonthly -= amount;
+	console.log('Total after subtraction:', totalMonthly);
+	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
 }
 
 function colorChange() {
@@ -62,6 +68,6 @@ function colorChange() {
 	if (totalMonthly > 20000) {
 		$('.totalMonthly').css('background-color', 'red');
 	} else {
-		$('.totalMonthly').css('background-color', 'white');
+		$('.totalMonthly').css('background-color', 'black');
 	}
 }
