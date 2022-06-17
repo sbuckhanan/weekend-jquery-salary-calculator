@@ -14,4 +14,15 @@ function onReady() {
 	console.log('JQ is ready');
 }
 
-function handleClick() {}
+function handleClick() {
+	//? Append info to dom and get values
+	$('.tableBody').append(`
+		<tr>
+			<th>${firstName.val()}</th>
+			<th>${lastName.val()}</th>
+			<th>${idNumber.val()}</th>
+			<th>${title.val()}</th>
+			<th>${annualSalary.val()}</th>
+		</tr>
+	`);
+}
