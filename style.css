@@ -1,13 +1,16 @@
 body {
 	background-color: rgba(0, 0, 0, 0.897);
+	margin: 0;
+	padding: 0;
 }
 header {
 	text-align: center;
 	color: white;
 	background-color: #2c3852;
 	height: 60px;
-	margin-bottom: 10px;
-	padding: 0;
+	margin-top: 0;
+	margin-bottom: 10;
+	align-items: center;
 }
 table {
 	border-collapse: collapse;
