@@ -26,5 +26,11 @@ function handleClick() {
 			<th>${annualSalary}</th>
 		</tr>
 	`);
-	totalMonthly += annualSalary;
+	totalMonthly += Number(annualSalary);
+	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
+	$('.firstName').val('');
+	$('.lastName').val('');
+	$('.idNumber').val('');
+	$('.title').val('');
+	$('.annualSalary').val('');
 }
