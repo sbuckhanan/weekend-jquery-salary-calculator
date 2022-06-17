@@ -24,6 +24,7 @@ function handleClick() {
 			<th>${idNumber}</th>
 			<th>${title}</th>
 			<th>${annualSalary}</th>
+			<th><button type="submit" class="deleteButton">Delete</button></th>
 		</tr>
 	`);
 	totalMonthly += Number(annualSalary);
