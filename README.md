@@ -6,7 +6,7 @@
 
 _Duration: 4 Hours_
 
-With this application you are able to calculate your monthly costs based on employees salary. Along with that you will see all of the data that an employee enters into the form on the screen. When you go over your monthly max of $20,000 your monthly total will turn red. Additionally you will be able to remove employees and get rid of their salary contribution to the total.
+With this application you are able to calculate monthly business costs based on employees salary. Along with that you will see all of the data that an employee enters into the form on the screen. When you go over your monthly max of $20,000 your monthly total will turn red. Additionally you will be able to remove employees and get rid of their salary contribution to the total.
 
 ## Screen Shot
 
