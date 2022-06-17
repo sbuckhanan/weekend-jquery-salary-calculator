@@ -4,25 +4,26 @@
 $(document).ready(onReady);
 
 let totalMonthly = 0;
-let firstName = $('.firstName');
-let lastName = $('.lastName');
-let idNumber = $('.idNumber');
-let title = $('.title');
-let annualSalary = $('.annualSalary');
 
 function onReady() {
 	console.log('JQ is ready');
+	$('.submitInfo').on('click', handleClick);
 }
 
 function handleClick() {
 	//? Append info to dom and get values
+	let firstName = $('.firstName').val();
+	let lastName = $('.lastName').val();
+	let idNumber = $('.idNumber').val();
+	let title = $('.title').val();
+	let annualSalary = $('.annualSalary').val();
 	$('.tableBody').append(`
 		<tr>
-			<th>${firstName.val()}</th>
-			<th>${lastName.val()}</th>
-			<th>${idNumber.val()}</th>
-			<th>${title.val()}</th>
-			<th>${annualSalary.val()}</th>
+			<th>${firstName}</th>
+			<th>${lastName}</th>
+			<th>${idNumber}</th>
+			<th>${title}</th>
+			<th>${annualSalary}</th>
 		</tr>
 	`);
 }
