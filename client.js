@@ -7,7 +7,9 @@ let totalMonthly = 0;
 
 function onReady() {
 	console.log('JQ is ready');
+	// Click listener for submit button
 	$('.submitInfo').on('click', handleClick);
+	$('.tableBody').on('click', '.deleteButton', handleDelete);
 }
 
 function handleClick() {
@@ -18,7 +20,7 @@ function handleClick() {
 	let title = $('.title').val();
 	let annualSalary = $('.annualSalary').val();
 	$('.tableBody').append(`
-		<tr>
+		<tr class="newEmployee">
 			<th>${firstName}</th>
 			<th>${lastName}</th>
 			<th>${idNumber}</th>
@@ -28,10 +30,18 @@ function handleClick() {
 		</tr>
 	`);
 	totalMonthly += Number(annualSalary);
+	console.log('Total Money:', totalMonthly);
 	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
 	$('.firstName').val('');
 	$('.lastName').val('');
 	$('.idNumber').val('');
 	$('.title').val('');
 	$('.annualSalary').val('');
+}
+
+function handleDelete() {
+	// Target parent element of the delete button?
+	// maybe .remove maybe .clear?
+	console.log('Click');
+	$(this).parent().parent().remove();
 }
