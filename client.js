@@ -23,6 +23,9 @@ function handleClick() {
 	let idNumber = $('.idNumber').val();
 	let title = $('.title').val();
 	let annualSalary = $('.annualSalary').val();
+	console.log('Annual Salary is:', annualSalary);
+	let monthlyAmount = Math.round(annualSalary / 12);
+	console.log('Monthly salary is:', monthlyAmount);
 	//? Add val to the DOM
 	$('.tableBody').append(`
 		<tr class="newEmployee">
@@ -35,7 +38,7 @@ function handleClick() {
 		</tr>
 	`);
 	//? Add annual salary to the total
-	totalMonthly += Number(annualSalary);
+	Math.round((totalMonthly += Number(monthlyAmount)));
 	//? Log the total
 	console.log('Total Money:', totalMonthly);
 	//? update total money on the DOM
@@ -57,17 +60,18 @@ function handleDelete() {
 	let amount = $(this).parent().parent().children('.salary').text();
 	console.log('This is the amount:', amount);
 	//? target the parents parent and delete it. should be tr tag
-	$(this).parent().parent().remove();
-	totalMonthly -= amount;
+	totalMonthly -= Math.round(Number(amount) / 12);
 	console.log('Total after subtraction:', totalMonthly);
 	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
+	$(this).parent().parent().remove();
+	colorChange();
 }
 
 function colorChange() {
 	console.log('Change Color');
 	if (totalMonthly > 20000) {
-		$('.totalMonthly').css('background-color', 'red');
+		$('.totalMonthly').css('color', 'red');
 	} else {
-		$('.totalMonthly').css('background-color', 'black');
+		$('.totalMonthly').css('color', 'white');
 	}
 }

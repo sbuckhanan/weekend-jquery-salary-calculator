@@ -48,6 +48,9 @@ th {
 .totalMonthly {
 	color: white;
 	text-align: center;
+	position: fixed;
+	bottom: 150px;
+	right: 300px;
 }
 .submitInfo {
 	height: 44px;
