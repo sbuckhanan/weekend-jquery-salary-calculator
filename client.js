@@ -1,6 +1,8 @@
 //? TODO LIST
 //? get data from inputs with val()
 //? click listener on button to get inputs and add to table. clear inputs
+//? Delete button to get rid of employees
+//? Change color of totalAmount if more than 20,000
 $(document).ready(onReady);
 
 let totalMonthly = 0;
@@ -44,6 +46,7 @@ function handleClick() {
 	$('.idNumber').val('');
 	$('.title').val('');
 	$('.annualSalary').val('');
+	colorChange();
 }
 
 function handleDelete() {
@@ -52,4 +55,13 @@ function handleDelete() {
 	console.log('Delete Click');
 	//? target the parents parent and delete it. should be tr tag
 	$(this).parent().parent().remove();
+}
+
+function colorChange() {
+	console.log('Change Color');
+	if (totalMonthly > 20000) {
+		$('.totalMonthly').css('background-color', 'red');
+	} else {
+		$('.totalMonthly').css('background-color', 'white');
+	}
 }
