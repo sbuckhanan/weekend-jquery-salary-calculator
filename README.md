@@ -16,7 +16,7 @@ With this application you are able to calculate your monthly costs based on empl
 
 NONE
 
-How does someone use this application?
+## How does someone use this application?
 
 1. Fill out each input block
 2. When you are finished click the Submit button.
