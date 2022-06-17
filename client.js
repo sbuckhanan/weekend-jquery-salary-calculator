@@ -7,18 +7,21 @@ let totalMonthly = 0;
 
 function onReady() {
 	console.log('JQ is ready');
-	// Click listener for submit button
+	//? Click listener for submit button
 	$('.submitInfo').on('click', handleClick);
+	//? Click listener for delete button
 	$('.tableBody').on('click', '.deleteButton', handleDelete);
 }
 
 function handleClick() {
+	console.log('Submit Click');
 	//? Append info to dom and get values
 	let firstName = $('.firstName').val();
 	let lastName = $('.lastName').val();
 	let idNumber = $('.idNumber').val();
 	let title = $('.title').val();
 	let annualSalary = $('.annualSalary').val();
+	//? Add val to the DOM
 	$('.tableBody').append(`
 		<tr class="newEmployee">
 			<th>${firstName}</th>
@@ -29,9 +32,13 @@ function handleClick() {
 			<th><button type="submit" class="deleteButton">Delete</button></th>
 		</tr>
 	`);
+	//? Add annual salary to the total
 	totalMonthly += Number(annualSalary);
+	//? Log the total
 	console.log('Total Money:', totalMonthly);
+	//? update total money on the DOM
 	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
+	//? Empty all values
 	$('.firstName').val('');
 	$('.lastName').val('');
 	$('.idNumber').val('');
@@ -40,8 +47,9 @@ function handleClick() {
 }
 
 function handleDelete() {
-	// Target parent element of the delete button?
-	// maybe .remove maybe .clear?
-	console.log('Click');
+	//? Target parent element of the delete button?
+	//? maybe .remove maybe .clear?
+	console.log('Delete Click');
+	//? target the parents parent and delete it. should be tr tag
 	$(this).parent().parent().remove();
 }
