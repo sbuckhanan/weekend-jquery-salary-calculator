@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="jQuery.js" charset="utf-8"></script>
+		<script src="client.js" charset="utf-8"></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<h1>Salary Calculator</h1>
+		</header>
+		<br />
+		<main>
+			<div class="inputWrapper">
+				<input type="text" class="input firstName" placeholder="First Name" />
+				<input type="text" class="input lastNAme" placeholder="Last Name" />
+				<input type="text" class="input ID" placeholder="ID" />
+				<input type="text" class="input title" placeholder="Title" />
+				<input type="text" class="input annualSalary" placeholder="Annual Salary" />
+				<button type="submit">Submit</button>
+			</div>
+			<br />
+			<table>
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Annual Salary</th>
+					</tr>
+				</thead>
+				<tbody id="tableBody">
+					<!-- Append tr with td in here -->
+				</tbody>
+			</table>
+			<br />
+			<h1>Total Monthly:</h1>
+		</main>
+	</body>
+</html>
