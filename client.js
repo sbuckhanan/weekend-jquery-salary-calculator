@@ -26,4 +26,5 @@ function handleClick() {
 			<th>${annualSalary}</th>
 		</tr>
 	`);
+	totalMonthly += annualSalary;
 }
