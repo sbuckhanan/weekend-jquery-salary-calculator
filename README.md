@@ -25,7 +25,7 @@ How does someone use this application? Tell a user story here.
 
 ## Built With
 
-![HTML](html.png) ![CSS](css.png) ![Javascript](js.png) jQuery
+HTML CSS Javascript jQuery
 
 ## Acknowledgement
 
