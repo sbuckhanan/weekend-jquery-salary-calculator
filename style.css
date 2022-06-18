@@ -50,7 +50,7 @@ th {
 	text-align: center;
 	position: fixed;
 	bottom: 150px;
-	right: 300px;
+	right: 100px;
 }
 .submitInfo {
 	height: 44px;
@@ -132,4 +132,15 @@ th {
 	max-width: 124px;
 	border-radius: 1rem;
 	background-color: rgb(234, 234, 234);
+}
+.deleteAll {
+	height: 44px;
+	width: 144px;
+	font-size: 20px;
+	border-radius: 1rem;
+	background-color: red;
+}
+.deleteAll:hover {
+	cursor: pointer;
+	transform: scale(1.1);
 }

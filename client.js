@@ -18,6 +18,7 @@ function onReady() {
 	$('.tableBody').on('click', '.submitEdit', submitEdit);
 	$('.deleteMessage').on('click', '.confirmButton', handleDelete);
 	$('.deleteMessage').on('click', '.cancelButton', cancelDelete);
+	$('.deleteAll').on('click', deleteAll);
 }
 
 function handleClick() {
@@ -208,9 +209,13 @@ function cancelDelete() {
 	$('.messageWrapper').remove();
 }
 
+function deleteAll() {
+	$('.newEmployee').remove();
+}
+
 //? Delete all employees button
 //? confirm delete all pop up
 //? Confirm delete pop up with employees name
 //? Click delete and then it runs a function to append a confirm message to the dom
 //? include both a yes and a no button
-//? if yes delete. if no do nothing
+//? if yes delete. if no do nothing but remove the message
