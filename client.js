@@ -94,6 +94,13 @@ function handleEdit() {
 		.children('.thLastName')
 		.html(`<input type="text" class="editLastName">`);
 	$('.editLastName').val(`${lastName}`);
+	//? append ID
+	$(this)
+		.parent()
+		.parent()
+		.children('.thIdNumber')
+		.html(`<input type="text" class="editIdNumber">`);
+	$('.editIdNumber').val(`${idNumber}`);
 }
 
 function submitEdit() {
