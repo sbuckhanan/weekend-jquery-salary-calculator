@@ -32,7 +32,14 @@ function handleClick() {
 	let monthlyAmount = Math.round(annualSalary / 12);
 	console.log('Monthly salary is:', monthlyAmount);
 	//? Add val to the DOM
-	$('.tableBody').append(`
+	if (
+		firstName !== '' &&
+		lastName !== '' &&
+		idNumber !== '' &&
+		title !== '' &&
+		annualSalary !== ''
+	) {
+		$('.tableBody').append(`
 		<tr class="newEmployee">
 			<th class="thFirstName">${firstName}</th>
 			<th class="thLastName">${lastName}</th>
@@ -43,19 +50,20 @@ function handleClick() {
 			<th class="buttonHolder"><button type="submit" class="editButton">Edit</button></th>
 		</tr>
 	`);
-	//? Add annual salary to the total
-	Math.round((totalMonthly += Number(monthlyAmount)));
-	//? Log the total
-	console.log('Total Money:', totalMonthly);
-	//? update total money on the DOM
-	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
-	//? Empty all values
-	$('.firstName').val('');
-	$('.lastName').val('');
-	$('.idNumber').val('');
-	$('.title').val('');
-	$('.annualSalary').val('');
-	colorChange();
+		//? Add annual salary to the total
+		Math.round((totalMonthly += Number(monthlyAmount)));
+		//? Log the total
+		console.log('Total Money:', totalMonthly);
+		//? update total money on the DOM
+		$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
+		//? Empty all values
+		$('.firstName').val('');
+		$('.lastName').val('');
+		$('.idNumber').val('');
+		$('.title').val('');
+		$('.annualSalary').val('');
+		colorChange();
+	}
 }
 
 function handleDelete() {
@@ -90,35 +98,35 @@ function handleEdit() {
 		.parent()
 		.parent()
 		.children('.thFirstName')
-		.html(`<input type="text" class="inputSmall editFirstName">`);
+		.html(`<input type="text" class="inputSmall editFirstName" placeholder="First Name" required>`);
 	$('.editFirstName').val(`${firstName}`);
 	//? append last name row
 	$(this)
 		.parent()
 		.parent()
 		.children('.thLastName')
-		.html(`<input type="text" class="inputSmall editLastName">`);
+		.html(`<input type="text" class="inputSmall editLastName" placeholder="Last Name" required>`);
 	$('.editLastName').val(`${lastName}`);
 	//? append ID
 	$(this)
 		.parent()
 		.parent()
 		.children('.thIdNumber')
-		.html(`<input type="text" class="inputSmall editIdNumber">`);
+		.html(`<input type="text" class="inputSmall editIdNumber" placeholder="ID" required>`);
 	$('.editIdNumber').val(`${idNumber}`);
 	//? append title
 	$(this)
 		.parent()
 		.parent()
 		.children('.thTitle')
-		.html(`<input type="text" class="inputSmall editTitle">`);
+		.html(`<input type="text" class="inputSmall editTitle" placeholder="Title" required>`);
 	$('.editTitle').val(`${title}`);
 	//? append salary
 	$(this)
 		.parent()
 		.parent()
 		.children('.salary')
-		.html(`<input type="text" class="inputSmall editSalary">`);
+		.html(`<input type="text" class="inputSmall editSalary" placeholder="Salary" required>`);
 	$('.editSalary').val(`${amount}`);
 	//? change edit button into submit button on edit
 	$(this)
@@ -142,28 +150,36 @@ function submitEdit() {
 	let annualSalary = $('.editSalary').val();
 	//? .html that info back in the table
 	//? append first name row
-	$(this).parent().parent().children('.thFirstName').html(`${firstName}`);
-	//? append last name row
-	$(this).parent().parent().children('.thLastName').html(`${lastName}`);
-	//? append ID
-	$(this).parent().parent().children('.thIdNumber').html(`${idNumber}`);
-	//? append title
-	$(this).parent().parent().children('.thTitle').html(`${title}`);
-	//? append salary
-	$(this).parent().parent().children('.salary').html(`${annualSalary}`);
-	//? change button back to edit button
-	$(this)
-		.parent()
-		.parent()
-		.children('.buttonHolder')
-		.html(`<button type="submit" class="editButton">Edit</button>`);
-	//? handle change of salary both more and less salary (maybe if logic)
-	//? update new monthly amount
-	totalMonthly += Math.round(Number(annualSalary) / 12);
-	//? update total monthly on dom
-	console.log(totalMonthly);
-	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
-	colorChange();
+	if (
+		firstName !== '' &&
+		lastName !== '' &&
+		idNumber !== '' &&
+		title !== '' &&
+		annualSalary !== ''
+	) {
+		$(this).parent().parent().children('.thFirstName').html(`${firstName}`);
+		//? append last name row
+		$(this).parent().parent().children('.thLastName').html(`${lastName}`);
+		//? append ID
+		$(this).parent().parent().children('.thIdNumber').html(`${idNumber}`);
+		//? append title
+		$(this).parent().parent().children('.thTitle').html(`${title}`);
+		//? append salary
+		$(this).parent().parent().children('.salary').html(`${annualSalary}`);
+		//? change button back to edit button
+		$(this)
+			.parent()
+			.parent()
+			.children('.buttonHolder')
+			.html(`<button type="submit" class="editButton">Edit</button>`);
+		//? handle change of salary both more and less salary (maybe if logic)
+		//? update new monthly amount
+		totalMonthly += Math.round(Number(annualSalary) / 12);
+		//? update total monthly on dom
+		console.log(totalMonthly);
+		$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
+		colorChange();
+	}
 }
 
 function colorChange() {
