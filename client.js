@@ -6,15 +6,18 @@
 $(document).ready(onReady);
 
 let totalMonthly = 0;
+let thisHolder;
 
 function onReady() {
 	console.log('JQ is ready');
 	//? Click listener for submit button
 	$('.submitInfo').on('click', handleClick);
 	//? Click listener for delete button
-	$('.tableBody').on('click', '.deleteButton', handleDelete);
+	$('.tableBody').on('click', '.deleteButton', deleteMessage);
 	$('.tableBody').on('click', '.editButton', handleEdit);
 	$('.tableBody').on('click', '.submitEdit', submitEdit);
+	$('.deleteMessage').on('click', '.confirmButton', handleDelete);
+	$('.deleteMessage').on('click', '.cancelButton', cancelDelete);
 }
 
 function handleClick() {
@@ -60,14 +63,15 @@ function handleDelete() {
 	//? maybe .remove maybe .clear?
 	console.log('Delete Click');
 	//? get amount of salary box
-	let amount = $(this).parent().parent().children('.salary').text();
+	let amount = thisHolder.parent().parent().children('.salary').text();
 	console.log('This is the amount:', amount);
 	//? target the parents parent and delete it. should be tr tag
 	totalMonthly -= Math.round(Number(amount) / 12);
 	console.log('Total after subtraction:', totalMonthly);
 	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
-	$(this).parent().parent().remove();
+	thisHolder.parent().parent().remove();
 	colorChange();
+	cancelDelete();
 }
 
 function handleEdit() {
@@ -86,27 +90,35 @@ function handleEdit() {
 		.parent()
 		.parent()
 		.children('.thFirstName')
-		.html(`<input type="text" class="editFirstName">`);
+		.html(`<input type="text" class="inputSmall editFirstName">`);
 	$('.editFirstName').val(`${firstName}`);
 	//? append last name row
 	$(this)
 		.parent()
 		.parent()
 		.children('.thLastName')
-		.html(`<input type="text" class="editLastName">`);
+		.html(`<input type="text" class="inputSmall editLastName">`);
 	$('.editLastName').val(`${lastName}`);
 	//? append ID
 	$(this)
 		.parent()
 		.parent()
 		.children('.thIdNumber')
-		.html(`<input type="text" class="editIdNumber">`);
+		.html(`<input type="text" class="inputSmall editIdNumber">`);
 	$('.editIdNumber').val(`${idNumber}`);
 	//? append title
-	$(this).parent().parent().children('.thTitle').html(`<input type="text" class="editTitle">`);
+	$(this)
+		.parent()
+		.parent()
+		.children('.thTitle')
+		.html(`<input type="text" class="inputSmall editTitle">`);
 	$('.editTitle').val(`${title}`);
 	//? append salary
-	$(this).parent().parent().children('.salary').html(`<input type="text" class="editSalary">`);
+	$(this)
+		.parent()
+		.parent()
+		.children('.salary')
+		.html(`<input type="text" class="inputSmall editSalary">`);
 	$('.editSalary').val(`${amount}`);
 	//? change edit button into submit button on edit
 	$(this)
@@ -162,3 +174,27 @@ function colorChange() {
 		$('.totalMonthly').css('color', 'white');
 	}
 }
+
+function deleteMessage() {
+	thisHolder = $(this);
+	let person = $(this).parent().parent().children('.thFirstName').text();
+	$('.deleteMessage').append(`
+	<div class="messageWrapper">
+	<h1 class="areYouSure">Are you sure you would like to delete ${person}?</h1>
+	<br />
+	<button type="submit" class="confirmButton">Confirm</button><button type="submit" class="cancelButton">Cancel</button>
+	</div>
+	`);
+}
+
+function cancelDelete() {
+	console.log('Cancel click');
+	$('.messageWrapper').remove();
+}
+
+//? Delete all employees button
+//? confirm delete all pop up
+//? Confirm delete pop up with employees name
+//? Click delete and then it runs a function to append a confirm message to the dom
+//? include both a yes and a no button
+//? if yes delete. if no do nothing

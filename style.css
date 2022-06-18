@@ -57,6 +57,7 @@ th {
 	width: 144px;
 	font-size: 20px;
 	border-radius: 1rem;
+	background-color: green;
 }
 .submitInfo:hover {
 	cursor: pointer;
@@ -67,8 +68,68 @@ th {
 	width: 104px;
 	font-size: 12px;
 	border-radius: 1rem;
+	background-color: red;
 }
 .deleteButton:hover {
 	cursor: pointer;
 	transform: scale(1.1);
+}
+.areYouSure {
+	color: yellow;
+	text-align: center;
+}
+.confirmButton {
+	height: 34px;
+	width: 104px;
+	font-size: 12px;
+	border-radius: 1rem;
+	background-color: green;
+}
+.cancelButton {
+	height: 34px;
+	width: 104px;
+	font-size: 12px;
+	border-radius: 1rem;
+	background-color: red;
+}
+.editButton {
+	height: 34px;
+	width: 104px;
+	font-size: 12px;
+	border-radius: 1rem;
+	background-color: yellow;
+}
+.submitEdit {
+	height: 34px;
+	width: 104px;
+	font-size: 12px;
+	border-radius: 1rem;
+	background-color: green;
+}
+.submitEdit:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+.messageWrapper {
+	text-align: center;
+	align-items: center;
+}
+.confirmButton:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+.cancelButton:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+.editButton:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+.inputSmall {
+	text-align: center;
+	height: 24px;
+	max-width: 124px;
+	border-radius: 1rem;
+	background-color: rgb(234, 234, 234);
 }
