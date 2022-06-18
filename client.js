@@ -14,6 +14,7 @@ function onReady() {
 	//? Click listener for delete button
 	$('.tableBody').on('click', '.deleteButton', handleDelete);
 	$('.tableBody').on('click', '.editButton', handleEdit);
+	$('.tableBody').on('click', '.submitEdit', submitEdit);
 }
 
 function handleClick() {
@@ -36,7 +37,7 @@ function handleClick() {
 			<th class="thTitle">${title}</th>
 			<th class="salary">${annualSalary}</th>
 			<th><button type="submit" class="deleteButton">Delete</button></th>
-			<th><button type="submit" class="editButton">Edit</button></th>
+			<th class="buttonHolder"><button type="submit" class="editButton">Edit</button></th>
 		</tr>
 	`);
 	//? Add annual salary to the total
@@ -101,6 +102,18 @@ function handleEdit() {
 		.children('.thIdNumber')
 		.html(`<input type="text" class="editIdNumber">`);
 	$('.editIdNumber').val(`${idNumber}`);
+	//? append title
+	$(this).parent().parent().children('.thTitle').html(`<input type="text" class="editTitle">`);
+	$('.editTitle').val(`${title}`);
+	//? append salary
+	$(this).parent().parent().children('.salary').html(`<input type="text" class="editSalary">`);
+	$('.editSalary').val(`${amount}`);
+	//? change edit button into submit button on edit
+	$(this)
+		.parent()
+		.parent()
+		.children('.buttonHolder')
+		.html(`<button type="submit" class="submitEdit">Submit</button>`);
 }
 
 function submitEdit() {
