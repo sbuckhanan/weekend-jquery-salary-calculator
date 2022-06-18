@@ -114,14 +114,43 @@ function handleEdit() {
 		.parent()
 		.children('.buttonHolder')
 		.html(`<button type="submit" class="submitEdit">Submit</button>`);
+	totalMonthly -= Math.round(Number(amount) / 12);
+	console.log(totalMonthly);
+	//? update total monthly on dom
+	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
+	colorChange();
 }
 
 function submitEdit() {
 	//? get the information of those input fields
+	let firstName = $('.editFirstName').val();
+	let lastName = $('.editLastName').val();
+	let idNumber = $('.editIdNumber').val();
+	let title = $('.editTitle').val();
+	let annualSalary = $('.editSalary').val();
 	//? .html that info back in the table
+	//? append first name row
+	$(this).parent().parent().children('.thFirstName').html(`${firstName}`);
+	//? append last name row
+	$(this).parent().parent().children('.thLastName').html(`${lastName}`);
+	//? append ID
+	$(this).parent().parent().children('.thIdNumber').html(`${idNumber}`);
+	//? append title
+	$(this).parent().parent().children('.thTitle').html(`${title}`);
+	//? append salary
+	$(this).parent().parent().children('.salary').html(`${annualSalary}`);
 	//? change button back to edit button
+	$(this)
+		.parent()
+		.parent()
+		.children('.buttonHolder')
+		.html(`<button type="submit" class="editButton">Edit</button>`);
 	//? handle change of salary both more and less salary (maybe if logic)
 	//? update new monthly amount
+	totalMonthly += Math.round(Number(annualSalary) / 12);
+	//? update total monthly on dom
+	console.log(totalMonthly);
+	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
 	colorChange();
 }
 
