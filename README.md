@@ -10,7 +10,7 @@ With this application you are able to calculate monthly business costs based on 
 
 ## Screen Shot
 
-![image info](screenshot1.png)
+![image info](screenshot2.jpeg) ![image info](screenshot1.jpeg) ![image info](screenshot3.jpeg)
 
 ### Prerequisites
 
