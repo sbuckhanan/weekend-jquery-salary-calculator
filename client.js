@@ -224,6 +224,8 @@ function cancelDelete() {
 function deleteAll() {
 	$('.newEmployee').remove();
 	cancelDelete();
+	totalMonthly = 0;
+	$('.totalMonthly').html(`Total Monthly: ${totalMonthly}`);
 }
 
 //? Delete all employees button
