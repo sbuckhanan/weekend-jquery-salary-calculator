@@ -144,3 +144,25 @@ th {
 	cursor: pointer;
 	transform: scale(1.1);
 }
+.confirmAllButton {
+	height: 34px;
+	width: 104px;
+	font-size: 12px;
+	border-radius: 1rem;
+	background-color: green;
+}
+.cancelAllButton {
+	height: 34px;
+	width: 104px;
+	font-size: 12px;
+	border-radius: 1rem;
+	background-color: red;
+}
+.confirmAllButton:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+.cancelAllButton:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}

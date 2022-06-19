@@ -18,7 +18,9 @@ function onReady() {
 	$('.tableBody').on('click', '.submitEdit', submitEdit);
 	$('.deleteMessage').on('click', '.confirmButton', handleDelete);
 	$('.deleteMessage').on('click', '.cancelButton', cancelDelete);
-	$('.deleteAll').on('click', deleteAll);
+	$('.deleteAll').on('click', deleteAllMessage);
+	$('.deleteMessage').on('click', '.confirmAllButton', deleteAll);
+	$('.deleteMessage').on('click', '.cancelAllButton', cancelDelete);
 }
 
 function handleClick() {
@@ -204,6 +206,16 @@ function deleteMessage() {
 	`);
 }
 
+function deleteAllMessage() {
+	$('.deleteMessage').append(`
+	<div class="messageWrapper">
+	<h1 class="areYouSure">Are you sure you would like to delete ALL employees?</h1>
+	<br />
+	<button type="submit" class="confirmAllButton">Confirm</button><button type="submit" class="cancelAllButton">Cancel</button>
+	</div>
+	`);
+}
+
 function cancelDelete() {
 	console.log('Cancel click');
 	$('.messageWrapper').remove();
@@ -211,6 +223,7 @@ function cancelDelete() {
 
 function deleteAll() {
 	$('.newEmployee').remove();
+	cancelDelete();
 }
 
 //? Delete all employees button
