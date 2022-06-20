@@ -115,7 +115,7 @@ function handleEdit() {
 		.parent()
 		.parent()
 		.children('.thIdNumber')
-		.html(`<input type="text" class="inputSmall editIdNumber" placeholder="ID" required>`);
+		.html(`<input type="number" class="inputSmall editIdNumber" placeholder="ID" required>`);
 	$('.editIdNumber').val(`${idNumber}`);
 	//? append title
 	$(this)
@@ -129,7 +129,7 @@ function handleEdit() {
 		.parent()
 		.parent()
 		.children('.salary')
-		.html(`<input type="text" class="inputSmall editSalary" placeholder="Salary" required>`);
+		.html(`<input type="number" class="inputSmall editSalary" placeholder="Salary" required>`);
 	$('.editSalary').val(`${amount}`);
 	//? change edit button into submit button on edit
 	$(this)
