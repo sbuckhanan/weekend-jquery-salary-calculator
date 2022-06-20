@@ -6,11 +6,11 @@
 
 _Duration: 4 Hours_
 
-With this application you are able to calculate monthly business costs based on employees salary. Along with that you will see all of the data that an employee enters into the form on the screen. When you go over your monthly max of $20,000 your monthly total will turn red. Additionally you will be able to remove employees and get rid of their salary contribution to the total.
+With this application you are able to calculate monthly business costs based on employees salary. Along with that you will see all of the data that an employee enters into the form on the screen. When you go over your monthly max of $20,000 your monthly total will turn red. Additionally you will be able to remove employees and get rid of their salary contribution to the total. You can delete employees from the table by clicking the delete button in their respective rows. You will then confirm you want to delete that employee. You can also delete all by clicking the delete all button and then confirming you would like to continue.
 
 ## Screen Shot
 
-![image info](screenshot2.jpeg) ![image info](screenshot1.jpeg) ![image info](screenshot3.jpeg)
+![videodemo](https://user-images.githubusercontent.com/102774817/174500175-0019b9d8-2a71-45df-9654-12044f95b107.gif)
 
 ### Prerequisites
 
