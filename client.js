@@ -44,13 +44,13 @@ function handleClick() {
 	) {
 		$('.tableBody').append(`
 		<tr class="newEmployee">
-			<th class="thFirstName">${firstName}</th>
-			<th class="thLastName">${lastName}</th>
-			<th class="thIdNumber">${idNumber}</th>
-			<th class="thTitle">${title}</th>
-			<th class="salary">${annualSalary}</th>
-			<th><button type="submit" class="deleteButton">Delete</button></th>
-			<th class="buttonHolder"><button type="submit" class="editButton">Edit</button></th>
+			<td class="thFirstName">${firstName}</td>
+			<td class="thLastName">${lastName}</td>
+			<td class="thIdNumber">${idNumber}</td>
+			<td class="thTitle">${title}</td>
+			<td class="salary">${annualSalary}</td>
+			<td><button type="submit" class="deleteButton">Delete</button></td>
+			<td class="buttonHolder"><button type="submit" class="editButton">Edit</button></td>
 		</tr>
 	`);
 		//? Add annual salary to the total
